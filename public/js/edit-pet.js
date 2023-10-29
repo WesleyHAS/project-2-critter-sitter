@@ -1,12 +1,13 @@
+// handler to edit pets
 document.querySelector(".pet-save-btn").addEventListener("click", async () => {
   const petId = document.querySelector(".pet-save-btn").dataset.petid;
   const name = document.querySelector("#name").value;
   const owner = document.querySelector("#owner").value;
   const address = document.querySelector("#address").value;
   const description = document.querySelector("#description").value;
-  // const careLevel = document.querySelector(
-  //   'input[name="care-level"]:checked'
-  // ).value;
+  const careLevel = document.querySelector(
+    'input[name="care-level"]:checked'
+  ).value;
 
   // Inside your event listener for the "Save Changes" button
   try {
@@ -20,10 +21,9 @@ document.querySelector(".pet-save-btn").addEventListener("click", async () => {
         owner,
         address,
         description,
-        // care_level: careLevel,
+        care_level: careLevel,
       }),
     });
-    // console.log(body);
     window.location.href = "/dashboard";
   } catch (error) {
     console.error("Error:", error);
